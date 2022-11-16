@@ -1,5 +1,7 @@
 package com.goorm.jejuPowerTest.app.base.db;
 
+import com.goorm.jejuPowerTest.app.avatar.dto.CreateAvatarDTO;
+import com.goorm.jejuPowerTest.app.avatar.service.AvatarService;
 import com.goorm.jejuPowerTest.app.content.dto.CreatContentDTO;
 import com.goorm.jejuPowerTest.app.content.service.ContentService;
 import com.goorm.jejuPowerTest.app.place.dto.CreatePlaceDTO;
@@ -13,7 +15,7 @@ public class IntiData {
 
     @Bean
     CommandLineRunner init(
-            ContentService contentService, PlaceService placeService
+            ContentService contentService, PlaceService placeService, AvatarService avatarService
     ) {
         return args -> {
             // 문제 정답
@@ -45,6 +47,28 @@ public class IntiData {
             placeService.create(history);
             placeService.create(region);
             placeService.create(dialect);
+
+            // 결과 별 유형
+            CreateAvatarDTO createAvatarDTO1 = new CreateAvatarDTO("321", "321img");
+            CreateAvatarDTO createAvatarDTO2 = new CreateAvatarDTO("312", "312img");
+            CreateAvatarDTO createAvatarDTO3 = new CreateAvatarDTO("231", "231img");
+            CreateAvatarDTO createAvatarDTO4 = new CreateAvatarDTO("213", "213img");
+            CreateAvatarDTO createAvatarDTO5 = new CreateAvatarDTO("132", "132img");
+            CreateAvatarDTO createAvatarDTO6 = new CreateAvatarDTO("123", "123img");
+            CreateAvatarDTO createAvatarDTO7 = new CreateAvatarDTO("333", "333img");
+            CreateAvatarDTO createAvatarDTO8 = new CreateAvatarDTO("222", "222img");
+            CreateAvatarDTO createAvatarDTO9 = new CreateAvatarDTO("111", "111img");
+            CreateAvatarDTO createAvatarDTO10 = new CreateAvatarDTO("000", "000img");
+            avatarService.create(createAvatarDTO1);
+            avatarService.create(createAvatarDTO2);
+            avatarService.create(createAvatarDTO3);
+            avatarService.create(createAvatarDTO4);
+            avatarService.create(createAvatarDTO5);
+            avatarService.create(createAvatarDTO6);
+            avatarService.create(createAvatarDTO7);
+            avatarService.create(createAvatarDTO8);
+            avatarService.create(createAvatarDTO9);
+            avatarService.create(createAvatarDTO10);
         };
     }
 }
