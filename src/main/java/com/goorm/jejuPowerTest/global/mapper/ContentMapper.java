@@ -2,7 +2,7 @@ package com.goorm.jejuPowerTest.global.mapper;
 
 import com.goorm.jejuPowerTest.app.content.dto.CreatContentDTO;
 import com.goorm.jejuPowerTest.app.content.dto.RequestDTO;
-import com.goorm.jejuPowerTest.app.content.dto.ResponseContentDTO;
+import com.goorm.jejuPowerTest.app.content.dto.ResponseAnswerDTO;
 import com.goorm.jejuPowerTest.app.content.entity.Content;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -17,8 +17,8 @@ public class ContentMapper {
                 .build();
         return content;
     }
-    public ResponseContentDTO entityToDto(Content content, RequestDTO[] requestDTO){
-        return ResponseContentDTO.builder()
+    public ResponseAnswerDTO entityToDto(Content content, RequestDTO[] requestDTO){
+        return ResponseAnswerDTO.builder()
                 .id(content.getId())
                 .answer(content.getAnswer())
                 .commentary(content.getCommentary())

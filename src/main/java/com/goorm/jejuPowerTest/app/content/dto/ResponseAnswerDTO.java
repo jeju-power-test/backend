@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class ResponseContentDTO {
+public class ResponseAnswerDTO {
     Long id;
     String answer;
     String commentary;
