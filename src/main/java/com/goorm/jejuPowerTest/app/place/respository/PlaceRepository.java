@@ -1,0 +1,8 @@
+package com.goorm.jejuPowerTest.app.place.respository;
+
+import com.goorm.jejuPowerTest.app.place.entity.Place;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PlaceRepository extends JpaRepository<Place, Long>{
+
+}

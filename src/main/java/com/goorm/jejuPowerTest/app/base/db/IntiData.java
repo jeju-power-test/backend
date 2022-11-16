@@ -2,6 +2,8 @@ package com.goorm.jejuPowerTest.app.base.db;
 
 import com.goorm.jejuPowerTest.app.content.dto.CreatContentDTO;
 import com.goorm.jejuPowerTest.app.content.service.ContentService;
+import com.goorm.jejuPowerTest.app.place.dto.CreatePlaceDTO;
+import com.goorm.jejuPowerTest.app.place.service.PlaceService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,9 +13,10 @@ public class IntiData {
 
     @Bean
     CommandLineRunner init(
-            ContentService contentService
+            ContentService contentService, PlaceService placeService
     ) {
         return args -> {
+            // 문제 정답
             CreatContentDTO creatContentDTO1 = new CreatContentDTO("oneAnswer", "oneCommentary");
             CreatContentDTO creatContentDTO2 = new CreatContentDTO("twoAnswer", "twoCommentary");
             CreatContentDTO creatContentDTO3 = new CreatContentDTO("threeAnswer", "threeCommentary");
@@ -34,6 +37,14 @@ public class IntiData {
             contentService.create(creatContentDTO8);
             contentService.create(creatContentDTO9);
             contentService.create(creatContentDTO10);
+
+            // 장소
+            CreatePlaceDTO history = new CreatePlaceDTO("historyTitle", "historyDescription", "historyUrl", "historyImage");
+            CreatePlaceDTO region = new CreatePlaceDTO("regionTitle", "regionDescription", "regionUrl", "regionImage");
+            CreatePlaceDTO dialect = new CreatePlaceDTO("dialectTitle", "dialectDescription", "dialectUrl", "dialectImage");
+            placeService.create(history);
+            placeService.create(region);
+            placeService.create(dialect);
         };
     }
 }
