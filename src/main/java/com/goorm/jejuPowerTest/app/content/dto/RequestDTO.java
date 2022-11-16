@@ -9,5 +9,5 @@ import lombok.*;
 @ToString
 public class RequestDTO {
     Long id;
-    boolean correct;
+    String answer;
 }

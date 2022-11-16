@@ -1,6 +1,6 @@
 package com.goorm.jejuPowerTest.app.base.db;
 
-import com.goorm.jejuPowerTest.app.content.dto.ContentDTO;
+import com.goorm.jejuPowerTest.app.content.dto.CreatContentDTO;
 import com.goorm.jejuPowerTest.app.content.service.ContentService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -14,26 +14,26 @@ public class IntiData {
             ContentService contentService
     ) {
         return args -> {
-            ContentDTO contentDTO1 = new ContentDTO("oneAnswer", "oneCommentary");
-            ContentDTO contentDTO2 = new ContentDTO("twoAnswer", "twoCommentary");
-            ContentDTO contentDTO3 = new ContentDTO("threeAnswer", "threeCommentary");
-            ContentDTO contentDTO4 = new ContentDTO("fourAnswer", "fourCommentary");
-            ContentDTO contentDTO5 = new ContentDTO("fiveAnswer", "fiveCommentary");
-            ContentDTO contentDTO6 = new ContentDTO("sixAnswer", "sixCommentary");
-            ContentDTO contentDTO7 = new ContentDTO("sevenAnswer", "sevenCommentary");
-            ContentDTO contentDTO8 = new ContentDTO("eightAnswer", "eightCommentary");
-            ContentDTO contentDTO9 = new ContentDTO("nineAnswer", "nineCommentary");
-            ContentDTO contentDTO10 = new ContentDTO("tenAnswer", "tenCommentary");
-            contentService.create(contentDTO1);
-            contentService.create(contentDTO2);
-            contentService.create(contentDTO3);
-            contentService.create(contentDTO4);
-            contentService.create(contentDTO5);
-            contentService.create(contentDTO6);
-            contentService.create(contentDTO7);
-            contentService.create(contentDTO8);
-            contentService.create(contentDTO9);
-            contentService.create(contentDTO10);
+            CreatContentDTO creatContentDTO1 = new CreatContentDTO("oneAnswer", "oneCommentary");
+            CreatContentDTO creatContentDTO2 = new CreatContentDTO("twoAnswer", "twoCommentary");
+            CreatContentDTO creatContentDTO3 = new CreatContentDTO("threeAnswer", "threeCommentary");
+            CreatContentDTO creatContentDTO4 = new CreatContentDTO("fourAnswer", "fourCommentary");
+            CreatContentDTO creatContentDTO5 = new CreatContentDTO("fiveAnswer", "fiveCommentary");
+            CreatContentDTO creatContentDTO6 = new CreatContentDTO("sixAnswer", "sixCommentary");
+            CreatContentDTO creatContentDTO7 = new CreatContentDTO("sevenAnswer", "sevenCommentary");
+            CreatContentDTO creatContentDTO8 = new CreatContentDTO("eightAnswer", "eightCommentary");
+            CreatContentDTO creatContentDTO9 = new CreatContentDTO("nineAnswer", "nineCommentary");
+            CreatContentDTO creatContentDTO10 = new CreatContentDTO("tenAnswer", "tenCommentary");
+            contentService.create(creatContentDTO1);
+            contentService.create(creatContentDTO2);
+            contentService.create(creatContentDTO3);
+            contentService.create(creatContentDTO4);
+            contentService.create(creatContentDTO5);
+            contentService.create(creatContentDTO6);
+            contentService.create(creatContentDTO7);
+            contentService.create(creatContentDTO8);
+            contentService.create(creatContentDTO9);
+            contentService.create(creatContentDTO10);
         };
     }
 }

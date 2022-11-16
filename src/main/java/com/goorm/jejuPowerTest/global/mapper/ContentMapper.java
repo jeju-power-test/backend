@@ -1,6 +1,6 @@
 package com.goorm.jejuPowerTest.global.mapper;
 
-import com.goorm.jejuPowerTest.app.content.dto.ContentDTO;
+import com.goorm.jejuPowerTest.app.content.dto.CreatContentDTO;
 import com.goorm.jejuPowerTest.app.content.dto.RequestDTO;
 import com.goorm.jejuPowerTest.app.content.dto.ResponseContentDTO;
 import com.goorm.jejuPowerTest.app.content.entity.Content;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class ContentMapper {
-    public Content contentDtoToEntity(ContentDTO contentDTO){
+    public Content contentDtoToEntity(CreatContentDTO creatContentDTO){
         Content content = Content.builder()
-                .answer(contentDTO.getAnswer())
-                .commentary(contentDTO.getCommentary())
+                .answer(creatContentDTO.getAnswer())
+                .commentary(creatContentDTO.getCommentary())
                 .build();
         return content;
     }
@@ -22,7 +22,7 @@ public class ContentMapper {
                 .id(content.getId())
                 .answer(content.getAnswer())
                 .commentary(content.getCommentary())
-                .correct(requestDTO[(int) (content.getId() - 1)].isCorrect())
+                .correct(requestDTO[(int) (content.getId() - 1)].getAnswer().equals(content.getAnswer()))
                 .build();
     }
 }
