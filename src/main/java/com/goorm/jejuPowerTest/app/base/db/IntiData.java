@@ -12,12 +12,15 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class IntiData {
-
+    private boolean initDataDone = true;
     @Bean
     CommandLineRunner init(
             ContentService contentService, PlaceService placeService, AvatarService avatarService
     ) {
         return args -> {
+            if(initDataDone){
+                return;
+            }
             // 문제 정답
             CreatContentDTO creatContentDTO1 = new CreatContentDTO("oneAnswer", "oneCommentary");
             CreatContentDTO creatContentDTO2 = new CreatContentDTO("twoAnswer", "twoCommentary");
