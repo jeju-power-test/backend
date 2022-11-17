@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class IntiData {
-    private boolean initDataDone = false;
+    private boolean initDataDone = true;
     @Bean
     CommandLineRunner init(
             ContentService contentService, PlaceService placeService, AvatarService avatarService
@@ -56,16 +56,16 @@ public class IntiData {
             placeService.create(dialect);
 
             // 결과 별 유형
-            CreateAvatarDTO createAvatarDTO1 = new CreateAvatarDTO("오메기떡", "https://kr.object.ncloudstorage.com/jejupower/avatar/1.png", "history", "dialect");
-            CreateAvatarDTO createAvatarDTO2 = new CreateAvatarDTO("한라봉", "https://kr.object.ncloudstorage.com/jejupower/avatar/2.png", "history", "region");
-            CreateAvatarDTO createAvatarDTO3 = new CreateAvatarDTO("돌하르방", "https://kr.object.ncloudstorage.com/jejupower/avatar/3.png", "region", "dialect");
-            CreateAvatarDTO createAvatarDTO4 = new CreateAvatarDTO("야자수", "https://kr.object.ncloudstorage.com/jejupower/avatar/4.png", "dialect", "region");
-            CreateAvatarDTO createAvatarDTO5 = new CreateAvatarDTO("우도땅콩", "https://kr.object.ncloudstorage.com/jejupower/avatar/5.png", "region", "history");
-            CreateAvatarDTO createAvatarDTO6 = new CreateAvatarDTO("동백꽃", "https://kr.object.ncloudstorage.com/jejupower/avatar/6.png", "dialect", "history");
-            CreateAvatarDTO createAvatarDTO7 = new CreateAvatarDTO("한라산", "333img", null, null);
-            CreateAvatarDTO createAvatarDTO8 = new CreateAvatarDTO("고기 국수", "222img", null, null);
-            CreateAvatarDTO createAvatarDTO9 = new CreateAvatarDTO("흑돼지", "111img", null, null);
-            CreateAvatarDTO createAvatarDTO10 = new CreateAvatarDTO("현무암", "000img", null, null);
+            CreateAvatarDTO createAvatarDTO1 = new CreateAvatarDTO("오메기떡", "https://kr.object.ncloudstorage.com/jejupower/avatar/1.png", "history", "dialect", 6L);
+            CreateAvatarDTO createAvatarDTO2 = new CreateAvatarDTO("한라봉", "https://kr.object.ncloudstorage.com/jejupower/avatar/2.png", "history", "region", 5L);
+            CreateAvatarDTO createAvatarDTO3 = new CreateAvatarDTO("돌하르방", "https://kr.object.ncloudstorage.com/jejupower/avatar/3.png", "region", "dialect", 4L);
+            CreateAvatarDTO createAvatarDTO4 = new CreateAvatarDTO("야자수", "https://kr.object.ncloudstorage.com/jejupower/avatar/4.png", "dialect", "region", 3L);
+            CreateAvatarDTO createAvatarDTO5 = new CreateAvatarDTO("우도땅콩", "https://kr.object.ncloudstorage.com/jejupower/avatar/5.png", "region", "history", 2L);
+            CreateAvatarDTO createAvatarDTO6 = new CreateAvatarDTO("동백꽃", "https://kr.object.ncloudstorage.com/jejupower/avatar/6.png", "dialect", "history", 1L);
+            CreateAvatarDTO createAvatarDTO7 = new CreateAvatarDTO("한라산", "333img", null, null, 10L);
+            CreateAvatarDTO createAvatarDTO8 = new CreateAvatarDTO("고기 국수", "222img", null, null, 9L);
+            CreateAvatarDTO createAvatarDTO9 = new CreateAvatarDTO("흑돼지", "111img", null, null, 8L);
+            CreateAvatarDTO createAvatarDTO10 = new CreateAvatarDTO("현무암", "000img", null, null, 7L);
             avatarService.create(createAvatarDTO1);
             avatarService.create(createAvatarDTO2);
             avatarService.create(createAvatarDTO3);

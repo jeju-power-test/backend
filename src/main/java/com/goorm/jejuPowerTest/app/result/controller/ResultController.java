@@ -41,6 +41,6 @@ public class ResultController {
 //        ResponsePlaceDTO placeDTO = placeService.getAnswer(requestDTO);
         ResponseResultDTO responseResultDTO = resultService.getAnswers(requestDTO);
         viewService.increaseView();
-        return new ResponseEntity<>(resultService.getAnswers(requestDTO), HttpStatus.OK);
+        return new ResponseEntity<>(responseResultDTO, HttpStatus.OK);
     }
 }

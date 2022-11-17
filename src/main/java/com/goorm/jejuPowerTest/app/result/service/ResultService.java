@@ -1,6 +1,7 @@
 package com.goorm.jejuPowerTest.app.result.service;
 
 import com.goorm.jejuPowerTest.app.avatar.dto.ResponseAvatarDTO;
+import com.goorm.jejuPowerTest.app.avatar.dto.ResponseAvatarFriendDTO;
 import com.goorm.jejuPowerTest.app.avatar.entity.Avatar;
 import com.goorm.jejuPowerTest.app.avatar.service.AvatarService;
 import com.goorm.jejuPowerTest.app.content.dto.ResponseContentDTO;
@@ -34,9 +35,10 @@ public class ResultService {
         int sum = history + region + dialect + hidden;
         // TODO : entity를 넘기는 거 수정
         Avatar avatar = avatarService.getAnswer(history, region, dialect);
-        ResponseAvatarDTO avatarDTO = avatarService.getDto(avatar, sum);
         List<ResponsePlaceDTO> responsePlaceDTO = placeService.getAnswer(requestDTO, history, region, dialect);
-        ResponseResultDTO responseResultDTO = new ResponseResultDTO(contentDTOS, avatarDTO, responsePlaceDTO);
+        ResponseAvatarDTO avatarDTO = avatarService.getDto(avatar, sum);
+        ResponseAvatarFriendDTO avatarFriendDTO = avatarService.getFriend(avatar.getFriend());
+        ResponseResultDTO responseResultDTO = new ResponseResultDTO(contentDTOS, responsePlaceDTO, avatarDTO, avatarFriendDTO);
         return responseResultDTO;
     }
 }

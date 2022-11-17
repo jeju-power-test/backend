@@ -2,6 +2,7 @@ package com.goorm.jejuPowerTest.global.mapper;
 
 import com.goorm.jejuPowerTest.app.avatar.dto.CreateAvatarDTO;
 import com.goorm.jejuPowerTest.app.avatar.dto.ResponseAvatarDTO;
+import com.goorm.jejuPowerTest.app.avatar.dto.ResponseAvatarFriendDTO;
 import com.goorm.jejuPowerTest.app.avatar.entity.Avatar;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -15,6 +16,7 @@ public class AvatarMapper {
                 .image(createAvatarDTO.getImage())
                 .positive(createAvatarDTO.getPositive())
                 .negative(createAvatarDTO.getNegative())
+                .friend(createAvatarDTO.getFriend())
                 .build();
     }
     public ResponseAvatarDTO entityToDto(Avatar avatar, int sum){
@@ -22,6 +24,12 @@ public class AvatarMapper {
                 .name(avatar.getName())
                 .image(avatar.getImage())
                 .score(sum*10)
+                .build();
+    }
+    public ResponseAvatarFriendDTO friendEntityToDto(Avatar avatar){
+        return ResponseAvatarFriendDTO.builder()
+                .name(avatar.getName())
+                .image(avatar.getImage())
                 .build();
     }
 }

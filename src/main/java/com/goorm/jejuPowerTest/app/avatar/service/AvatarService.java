@@ -2,6 +2,7 @@ package com.goorm.jejuPowerTest.app.avatar.service;
 
 import com.goorm.jejuPowerTest.app.avatar.dto.CreateAvatarDTO;
 import com.goorm.jejuPowerTest.app.avatar.dto.ResponseAvatarDTO;
+import com.goorm.jejuPowerTest.app.avatar.dto.ResponseAvatarFriendDTO;
 import com.goorm.jejuPowerTest.app.avatar.entity.Avatar;
 import com.goorm.jejuPowerTest.app.avatar.repository.AvatarRepository;
 import com.goorm.jejuPowerTest.global.mapper.AvatarMapper;
@@ -140,5 +141,10 @@ public class AvatarService {
 
     public ResponseAvatarDTO getDto(Avatar avatar, int sum) {
         return avatarMapper.entityToDto(avatar, sum);
+    }
+
+    public ResponseAvatarFriendDTO getFriend(Long friend) {
+        Avatar avatarFriend = avatarRepository.findById(friend).get();
+        return avatarMapper.friendEntityToDto(avatarFriend);
     }
 }
