@@ -7,7 +7,7 @@ import com.goorm.jejuPowerTest.app.content.service.ContentService;
 import com.goorm.jejuPowerTest.app.place.dto.CreatePlaceDTO;
 import com.goorm.jejuPowerTest.app.place.service.PlaceService;
 import com.goorm.jejuPowerTest.app.view.entity.View;
-import com.goorm.jejuPowerTest.app.view.service.ViewService;
+//import com.goorm.jejuPowerTest.app.view.service.ViewService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,8 @@ public class IntiData {
     private boolean initDataDone = false;
     @Bean
     CommandLineRunner init(
-            ContentService contentService, PlaceService placeService, AvatarService avatarService, ViewService viewService
+            ContentService contentService, PlaceService placeService, AvatarService avatarService
+//            , ViewService viewService
     ) {
         return args -> {
             if(initDataDone){
@@ -75,11 +76,11 @@ public class IntiData {
             avatarService.create(createAvatarDTO9);
             avatarService.create(createAvatarDTO10);
 
-            // view
-            View view = View.builder()
-                    .count(0L)
-                    .build();
-            viewService.create(view);
+//            // view
+//            View view = View.builder()
+//                    .count(0L)
+//                    .build();
+//            viewService.create(view);
         };
     }
 }
