@@ -1,8 +1,10 @@
 package com.goorm.jejuPowerTest.app.place.service;
 
 import com.goorm.jejuPowerTest.app.place.dto.CreatePlaceDTO;
+import com.goorm.jejuPowerTest.app.place.dto.ResponsePlaceDTO;
 import com.goorm.jejuPowerTest.app.place.entity.Place;
 import com.goorm.jejuPowerTest.app.place.respository.PlaceRepository;
+import com.goorm.jejuPowerTest.app.result.dto.RequestDTO;
 import com.goorm.jejuPowerTest.global.mapper.PlaceMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,4 +24,6 @@ public class PlaceService {
         Place place = placeMapper.dtoToEntity(createPlaceDTO);
         placeRepository.save(place);
     }
+
+
 }

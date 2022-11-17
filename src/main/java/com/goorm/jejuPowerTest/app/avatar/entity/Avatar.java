@@ -18,4 +18,6 @@ import static lombok.AccessLevel.PROTECTED;
 public class Avatar extends BaseEntity {
     String name;
     String image;
+    String positive;
+    String negative;
 }

@@ -49,16 +49,16 @@ public class IntiData {
             placeService.create(dialect);
 
             // 결과 별 유형
-            CreateAvatarDTO createAvatarDTO1 = new CreateAvatarDTO("321", "321img");
-            CreateAvatarDTO createAvatarDTO2 = new CreateAvatarDTO("312", "312img");
-            CreateAvatarDTO createAvatarDTO3 = new CreateAvatarDTO("231", "231img");
-            CreateAvatarDTO createAvatarDTO4 = new CreateAvatarDTO("213", "213img");
-            CreateAvatarDTO createAvatarDTO5 = new CreateAvatarDTO("132", "132img");
-            CreateAvatarDTO createAvatarDTO6 = new CreateAvatarDTO("123", "123img");
-            CreateAvatarDTO createAvatarDTO7 = new CreateAvatarDTO("333", "333img");
-            CreateAvatarDTO createAvatarDTO8 = new CreateAvatarDTO("222", "222img");
-            CreateAvatarDTO createAvatarDTO9 = new CreateAvatarDTO("111", "111img");
-            CreateAvatarDTO createAvatarDTO10 = new CreateAvatarDTO("000", "000img");
+            CreateAvatarDTO createAvatarDTO1 = new CreateAvatarDTO("321", "321img", "history", "dialect");
+            CreateAvatarDTO createAvatarDTO2 = new CreateAvatarDTO("312", "312img", "history", "place");
+            CreateAvatarDTO createAvatarDTO3 = new CreateAvatarDTO("231", "231img", "place", "dialect");
+            CreateAvatarDTO createAvatarDTO4 = new CreateAvatarDTO("213", "213img", "dialect", "place");
+            CreateAvatarDTO createAvatarDTO5 = new CreateAvatarDTO("132", "132img", "place", "history");
+            CreateAvatarDTO createAvatarDTO6 = new CreateAvatarDTO("123", "123img", "dialect", "history");
+            CreateAvatarDTO createAvatarDTO7 = new CreateAvatarDTO("333", "333img", null, null);
+            CreateAvatarDTO createAvatarDTO8 = new CreateAvatarDTO("222", "222img", null, null);
+            CreateAvatarDTO createAvatarDTO9 = new CreateAvatarDTO("111", "111img", null, null);
+            CreateAvatarDTO createAvatarDTO10 = new CreateAvatarDTO("000", "000img", null, null);
             avatarService.create(createAvatarDTO1);
             avatarService.create(createAvatarDTO2);
             avatarService.create(createAvatarDTO3);

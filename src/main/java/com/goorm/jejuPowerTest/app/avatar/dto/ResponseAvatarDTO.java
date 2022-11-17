@@ -7,10 +7,8 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class CreateAvatarDTO {
+public class ResponseAvatarDTO {
     String name;
     String image;
-    String positive;
-    String negative;
+    int score;
 }
-

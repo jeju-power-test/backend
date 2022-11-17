@@ -1,4 +1,4 @@
-package com.goorm.jejuPowerTest.app.content.dto;
+package com.goorm.jejuPowerTest.app.result.dto;
 
 import lombok.*;
 
