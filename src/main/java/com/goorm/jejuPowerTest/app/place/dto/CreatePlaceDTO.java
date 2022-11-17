@@ -12,4 +12,5 @@ public class CreatePlaceDTO {
     String description;
     String url;
     String image;
+    String category;
 }

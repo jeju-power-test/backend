@@ -41,19 +41,19 @@ public class IntiData {
             contentService.create(creatContentDTO10);
 
             // 장소
-            CreatePlaceDTO history = new CreatePlaceDTO("historyTitle", "historyDescription", "historyUrl", "historyImage");
-            CreatePlaceDTO region = new CreatePlaceDTO("regionTitle", "regionDescription", "regionUrl", "regionImage");
-            CreatePlaceDTO dialect = new CreatePlaceDTO("dialectTitle", "dialectDescription", "dialectUrl", "dialectImage");
+            CreatePlaceDTO history = new CreatePlaceDTO("historyTitle", "historyDescription", "historyUrl", "historyImage", "history");
+            CreatePlaceDTO region = new CreatePlaceDTO("regionTitle", "regionDescription", "regionUrl", "regionImage", "region");
+            CreatePlaceDTO dialect = new CreatePlaceDTO("dialectTitle", "dialectDescription", "dialectUrl", "dialectImage", "dialect");
             placeService.create(history);
             placeService.create(region);
             placeService.create(dialect);
 
             // 결과 별 유형
             CreateAvatarDTO createAvatarDTO1 = new CreateAvatarDTO("321", "321img", "history", "dialect");
-            CreateAvatarDTO createAvatarDTO2 = new CreateAvatarDTO("312", "312img", "history", "place");
-            CreateAvatarDTO createAvatarDTO3 = new CreateAvatarDTO("231", "231img", "place", "dialect");
-            CreateAvatarDTO createAvatarDTO4 = new CreateAvatarDTO("213", "213img", "dialect", "place");
-            CreateAvatarDTO createAvatarDTO5 = new CreateAvatarDTO("132", "132img", "place", "history");
+            CreateAvatarDTO createAvatarDTO2 = new CreateAvatarDTO("312", "312img", "history", "region");
+            CreateAvatarDTO createAvatarDTO3 = new CreateAvatarDTO("231", "231img", "region", "dialect");
+            CreateAvatarDTO createAvatarDTO4 = new CreateAvatarDTO("213", "213img", "dialect", "region");
+            CreateAvatarDTO createAvatarDTO5 = new CreateAvatarDTO("132", "132img", "region", "history");
             CreateAvatarDTO createAvatarDTO6 = new CreateAvatarDTO("123", "123img", "dialect", "history");
             CreateAvatarDTO createAvatarDTO7 = new CreateAvatarDTO("333", "333img", null, null);
             CreateAvatarDTO createAvatarDTO8 = new CreateAvatarDTO("222", "222img", null, null);

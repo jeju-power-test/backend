@@ -30,4 +30,7 @@ public class Place extends BaseEntity {
 
     @Column(nullable = false)
     String image;
+
+    @Column(nullable = false)
+    String category;
 }

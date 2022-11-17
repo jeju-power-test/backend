@@ -27,7 +27,7 @@ public class AvatarService {
     }
 
     // TODO : 알고리즘 고치기
-    public Avatar getAnswer(int history, int place, int dialect) {
+    public Avatar getAnswer(int history, int region, int dialect) {
         Avatar avatar = null;
         HashMap<String, Integer> map = new HashMap<>();
         String[] name = new String[3];
@@ -36,7 +36,7 @@ public class AvatarService {
         int positive = 0;
         int negative = 0;
         map.put("history", history);
-        map.put("place", place);
+        map.put("region", region);
         map.put("dialect", dialect);
         List<Map.Entry<String,Integer>> list = new ArrayList<Map.Entry<String,Integer>>(map.entrySet());
         Collections.sort(list, new Comparator<>() {
@@ -49,12 +49,9 @@ public class AvatarService {
             name[i] = entry.getKey();
             cnt[i] = entry.getValue();
             System.out.println(i);
-            System.out.println("name = " + name[i]);
-            System.out.println("[i] = " + cnt[i]);
             i++;
         }
         if(cnt[0] == 3){
-            System.out.println("zeroooooo");
             if(cnt[1] == 3){
                 if(cnt[2] >=2){
                     avatar = avatarRepository.findById(7L).get();
@@ -88,10 +85,8 @@ public class AvatarService {
                 }
             }
             else if(cnt[1] == 0){
-                System.out.println("qqqqqqqqqqqqqq");
                 positive = 0;
                 negative = rand() ? 1 : 2;
-                System.out.println("negative = " + negative);
                 avatar = avatarRepository.findByPositiveAndNegative(name[positive], name[negative]).get();
             }
         }

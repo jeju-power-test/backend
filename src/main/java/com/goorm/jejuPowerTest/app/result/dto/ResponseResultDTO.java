@@ -15,5 +15,5 @@ import java.util.List;
 public class ResponseResultDTO {
     List<ResponseContentDTO> contents;
     ResponseAvatarDTO avatar;
-    ResponsePlaceDTO place;
+    List<ResponsePlaceDTO> places;
 }
