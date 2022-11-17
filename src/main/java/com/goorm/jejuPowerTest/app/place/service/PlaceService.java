@@ -52,6 +52,10 @@ public class PlaceService {
             System.out.println(i);
             i++;
         }
+        System.out.println("123123");
+        System.out.println(history);
+        System.out.println(region);
+        System.out.println(dialect);
         if(cnt[0] == 3){
             if(cnt[1] >= 2){
                 if(cnt[2] >= 2){
@@ -125,17 +129,19 @@ public class PlaceService {
                 responsePlaceDTOS.add(placeDTO2);
                 return responsePlaceDTOS;
             }
-            else {
-                placeNum1 = rand(3, -1);
-                placeNum2 = rand(3, placeNum1);
-                Place place1 = placeRepository.findByCategory(name[placeNum1]).get();
-                ResponsePlaceDTO placeDTO1 = placeMapper.entityToDto(place1);
-                Place place2 = placeRepository.findByCategory(name[placeNum2]).get();
-                ResponsePlaceDTO placeDTO2 = placeMapper.entityToDto(place2);
-                responsePlaceDTOS.add(placeDTO1);
-                responsePlaceDTOS.add(placeDTO2);
-                return responsePlaceDTOS;
-            }
+        }
+        else {
+            placeNum1 = rand(3, -1);
+            placeNum2 = rand(3, placeNum1);
+            System.out.println("placeNum1 = " + placeNum1);
+            System.out.println("placeNum2 = " + placeNum2);
+            Place place1 = placeRepository.findByCategory(name[placeNum1]).get();
+            ResponsePlaceDTO placeDTO1 = placeMapper.entityToDto(place1);
+            Place place2 = placeRepository.findByCategory(name[placeNum2]).get();
+            ResponsePlaceDTO placeDTO2 = placeMapper.entityToDto(place2);
+            responsePlaceDTOS.add(placeDTO1);
+            responsePlaceDTOS.add(placeDTO2);
+            return responsePlaceDTOS;
         }
         return responsePlaceDTOS;
     }

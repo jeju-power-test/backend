@@ -11,5 +11,5 @@ public class ResponseContentDTO {
     Long id;
     String answer;
     String commentary;
-    boolean correct;
+    String correct;
 }
