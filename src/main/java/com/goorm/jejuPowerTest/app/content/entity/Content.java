@@ -23,4 +23,10 @@ public class Content extends BaseEntity {
 
     @Column(columnDefinition = "TEXT")
     private String commentary;
+
+    @Column()
+    String imageA;
+
+    @Column()
+    String imageB;
 }

@@ -14,6 +14,8 @@ public class ContentMapper {
         Content content = Content.builder()
                 .answer(creatContentDTO.getAnswer())
                 .commentary(creatContentDTO.getCommentary())
+                .imageA(creatContentDTO.getImageA())
+                .imageB(creatContentDTO.getImageB())
                 .build();
         return content;
     }
