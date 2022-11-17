@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class ViewMapper {
     public ResponseViewDTO entityToDto(View view){
         return ResponseViewDTO.builder()
-                .view(view.getCount())
+                .count(view.getCount())
                 .build();
     }
 }

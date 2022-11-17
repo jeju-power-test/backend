@@ -11,6 +11,7 @@ import com.goorm.jejuPowerTest.app.content.service.ContentService;
 import com.goorm.jejuPowerTest.app.result.dto.ResponseResultDTO;
 import com.goorm.jejuPowerTest.app.result.service.ResultService;
 //import com.goorm.jejuPowerTest.app.view.service.ViewService;
+import com.goorm.jejuPowerTest.app.view.service.ViewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,7 @@ import java.util.List;
 public class ResultController {
     private final ResultService resultService;
 
-//    private final ViewService viewService;
+    private final ViewService viewService;
 
     @GetMapping("/test")
     public String test(){
@@ -39,7 +40,7 @@ public class ResultController {
 //        ResponseAvatarDTO avatarDTO;
 //        ResponsePlaceDTO placeDTO = placeService.getAnswer(requestDTO);
         ResponseResultDTO responseResultDTO = resultService.getAnswers(requestDTO);
-//        viewService.increaseView();
+        viewService.increaseView();
         return new ResponseEntity<>(resultService.getAnswers(requestDTO), HttpStatus.OK);
     }
 }
