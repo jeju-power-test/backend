@@ -10,11 +10,13 @@ import com.goorm.jejuPowerTest.app.content.dto.ResponseContentDTO;
 import com.goorm.jejuPowerTest.app.content.service.ContentService;
 import com.goorm.jejuPowerTest.app.result.dto.ResponseResultDTO;
 import com.goorm.jejuPowerTest.app.result.service.ResultService;
+//import com.goorm.jejuPowerTest.app.view.service.ViewService;
 import com.goorm.jejuPowerTest.app.view.service.ViewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -27,6 +29,11 @@ public class ResultController {
 
     private final ViewService viewService;
 
+    @GetMapping("/test")
+    public String test(){
+        return "qwe";
+    }
+
     @PostMapping("/result")
     public ResponseEntity<ResponseResultDTO> getAnswer(@RequestBody RequestDTO[] requestDTO){
 //        List<ResponseContentDTO> contentDTOS = contentService.getAnswers(requestDTO);
@@ -34,6 +41,6 @@ public class ResultController {
 //        ResponsePlaceDTO placeDTO = placeService.getAnswer(requestDTO);
         ResponseResultDTO responseResultDTO = resultService.getAnswers(requestDTO);
         viewService.increaseView();
-        return new ResponseEntity<>(resultService.getAnswers(requestDTO), HttpStatus.OK);
+        return new ResponseEntity<>(responseResultDTO, HttpStatus.OK);
     }
 }

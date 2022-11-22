@@ -8,5 +8,5 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class ResponseViewDTO {
-    Long view;
+    Long count;
 }

@@ -14,6 +14,8 @@ public class ContentMapper {
         Content content = Content.builder()
                 .answer(creatContentDTO.getAnswer())
                 .commentary(creatContentDTO.getCommentary())
+                .imageA(creatContentDTO.getImageA())
+                .imageB(creatContentDTO.getImageB())
                 .build();
         return content;
     }
@@ -22,7 +24,7 @@ public class ContentMapper {
                 .id(content.getId())
                 .answer(content.getAnswer())
                 .commentary(content.getCommentary())
-                .correct(requestDTO[(int) (content.getId() - 1)].getAnswer().equals(content.getAnswer()))
+                .correct(requestDTO[(int) (content.getId() - 1)].getAnswer().equals(content.getAnswer())? "success":"fail")
                 .build();
     }
 }

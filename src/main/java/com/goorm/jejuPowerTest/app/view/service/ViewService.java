@@ -29,6 +29,9 @@ public class ViewService {
 
     @Transactional
     public void increaseView(){
-        viewRepository.updateView(1L);
+        View view = viewRepository.findById(1L).get();
+        view.setCount(view.getCount() + 1L);
     }
+
+
 }

@@ -10,4 +10,6 @@ import lombok.*;
 public class CreatContentDTO {
     String answer;
     String commentary;
+    String imageA;
+    String imageB;
 }
