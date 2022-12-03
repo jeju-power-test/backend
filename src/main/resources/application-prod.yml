@@ -2,9 +2,9 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:mariadb://db-dpk8a.pub-cdb.ntruss.com/jejupower?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
+    url: jdbc:mariadb://127.0.0.1:3306/jejupower?useUnicode=true&chareacterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
     username: ojteam_admin
-    password: rlaclgns5628!
+    password: ojteam1234
   jpa:
     hibernate:
       ddl-auto: update
