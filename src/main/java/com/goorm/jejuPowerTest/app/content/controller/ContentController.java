@@ -23,5 +23,5 @@ public class ContentController {
     @PostMapping("/answer")
     public ResponseEntity<List<ResponseContentDTO>> getAnswer(@RequestBody RequestDTO[] requestDTO){
         return new ResponseEntity<>(contentService.getAnswers(requestDTO), HttpStatus.OK);
-    }
+    } 
 }
