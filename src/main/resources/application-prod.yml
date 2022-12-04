@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:mariadb://172.0.0.1:3306/jejupower?useUnicode=true&chareacterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
+    url: jdbc:mariadb://27.96.134.172:3306/jejupower?useUnicode=true&chareacterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
     username: ojteam_admin
     password: ojteam1234
   jpa:
