@@ -79,7 +79,7 @@ public class IntiData {
 
             // view
             View view = View.builder()
-                    .count(0L)
+                    .count(161334L)//161022
                     .build();
             viewService.create(view);
         };
