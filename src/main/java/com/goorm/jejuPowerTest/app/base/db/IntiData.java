@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class IntiData {
-    private boolean initDataDone = false;
+    private boolean initDataDone = true;
     @Bean
     CommandLineRunner init(
             ContentService contentService, PlaceService placeService, AvatarService avatarService
