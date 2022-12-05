@@ -7,7 +7,6 @@ import com.goorm.jejuPowerTest.app.content.service.ContentService;
 import com.goorm.jejuPowerTest.app.place.dto.CreatePlaceDTO;
 import com.goorm.jejuPowerTest.app.place.service.PlaceService;
 import com.goorm.jejuPowerTest.app.view.entity.View;
-//import com.goorm.jejuPowerTest.app.view.service.ViewService;
 import com.goorm.jejuPowerTest.app.view.service.ViewService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class IntiData {
-    private boolean initDataDone = true;
+    private boolean initDataDone = false;
     @Bean
     CommandLineRunner init(
             ContentService contentService, PlaceService placeService, AvatarService avatarService
@@ -62,10 +61,10 @@ public class IntiData {
             CreateAvatarDTO createAvatarDTO4 = new CreateAvatarDTO("야자수", "https://kr.object.ncloudstorage.com/jejupower/avatar/4.png", "dialect", "region", 3L);
             CreateAvatarDTO createAvatarDTO5 = new CreateAvatarDTO("우도땅콩", "https://kr.object.ncloudstorage.com/jejupower/avatar/5.png", "region", "history", 2L);
             CreateAvatarDTO createAvatarDTO6 = new CreateAvatarDTO("동백꽃", "https://kr.object.ncloudstorage.com/jejupower/avatar/6.png", "dialect", "history", 1L);
-            CreateAvatarDTO createAvatarDTO7 = new CreateAvatarDTO("한라산", "333img", null, null, 10L);
-            CreateAvatarDTO createAvatarDTO8 = new CreateAvatarDTO("고기 국수", "222img", null, null, 9L);
-            CreateAvatarDTO createAvatarDTO9 = new CreateAvatarDTO("흑돼지", "111img", null, null, 8L);
-            CreateAvatarDTO createAvatarDTO10 = new CreateAvatarDTO("현무암", "000img", null, null, 7L);
+            CreateAvatarDTO createAvatarDTO7 = new CreateAvatarDTO("한라산", "https://kr.object.ncloudstorage.com/jejupower/avatar/7.png", null, null, 10L);
+            CreateAvatarDTO createAvatarDTO8 = new CreateAvatarDTO("고기 국수", "https://kr.object.ncloudstorage.com/jejupower/avatar/8.png", null, null, 9L);
+            CreateAvatarDTO createAvatarDTO9 = new CreateAvatarDTO("흑돼지", "https://kr.object.ncloudstorage.com/jejupower/avatar/9.png", null, null, 8L);
+            CreateAvatarDTO createAvatarDTO10 = new CreateAvatarDTO("현무암", "https://kr.object.ncloudstorage.com/jejupower/avatar/10.png", null, null, 7L);
             avatarService.create(createAvatarDTO1);
             avatarService.create(createAvatarDTO2);
             avatarService.create(createAvatarDTO3);
@@ -79,7 +78,7 @@ public class IntiData {
 
             // view
             View view = View.builder()
-                    .count(161334L)//161022
+                    .count(161334L)// 161022
                     .build();
             viewService.create(view);
         };
